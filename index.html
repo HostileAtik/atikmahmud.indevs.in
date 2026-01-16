@@ -1,24 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Atik Mahmud</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atik Mahmud | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #161616;
+            --text-color: #e0e0e0;
+            --accent-color: #00d2ff; /* Cyan for Tech feel */
+            --secondary-accent: #9d4edd; /* Purple for Gaming/Manga feel */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+        }
+
+        .social-icons a {
+            color: var(--text-color);
+            margin-left: 20px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #333;
+            margin-bottom: 30px;
+            border: 3px solid var(--accent-color);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Placeholder image style */
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Remove opacity below once you add your real image */
+            opacity: 0.5; 
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .typewriter {
+            font-size: 1.2rem;
+            color: #888;
+            min-height: 1.6em;
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 80px 10%;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Education --- */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* Hidden for scroll animation */
+            transform: translateY(30px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* --- Hobbies --- */
+        .hobbies-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .hobby-box {
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            padding: 40px;
+            border-radius: 15px;
+            width: 300px;
+            transition: 0.4s;
+            border: 1px solid #333;
+        }
+
+        .hobby-box:hover {
+            border-color: var(--secondary-accent);
+            box-shadow: 0 0 25px rgba(157, 78, 221, 0.2);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-accent);
+        }
+
+        /* --- Projects --- */
+        .project-placeholder {
+            border: 2px dashed #444;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            color: #666;
+            transition: 0.3s;
+        }
+        
+        .project-placeholder:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #050505;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .reveal {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition: all 1s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 60px 5%; }
+        }
+    </style>
 </head>
 <body>
 
-  <section class="hero">
-    <h1>Hello, I'm <span>Atik</span></h1>
-    <p>Student | Tech Enthusiast</p>
-    <a href="#projects">View Projects</a>
-  </section>
+    <nav>
+        <div class="logo">ATIK.</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </nav>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">Project 1</div>
-    <div class="card">Project 2</div>
-  </section>
+    <section class="hero">
+        <div class="profile-img-container">
+            <img src="https://via.placeholder.com/150" alt="Atik Mahmud">
+        </div>
+        <h1>Hi, I'm <span>Atik Mahmud</span></h1>
+        <div class="typewriter" id="typewriter"></div>
+        
+        <div style="margin-top: 50px;">
+            <i class="fas fa-chevron-down" style="animation: float 2s infinite;"></i>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="card scroll-trigger">
+                <i class="fas fa-university" style="font-size: 2rem; margin-bottom: 15px; color: #fff;"></i>
+                <h3>BUET</h3>
+                <p>Bangladesh University of Engineering and Technology</p>
+                <p style="margin-top: 10px; color: #888;">Undergraduate Student</p>
+            </div>
+            
+            <div class="card scroll-trigger" style="transition-delay: 200ms;">
+                <i class="fas fa-graduation-cap" style="font-size: 2rem; margin-bottom: 15px; color: #fff;"></i>
+                <h3>Notre Dame College</h3>
+                <p>Dhaka, Bangladesh</p>
+                <p style="margin-top: 10px; color: #888;">Higher Secondary Certificate</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2 class="section-title">Interests</h2>
+        <div class="hobbies-container">
+            <div class="hobby-box scroll-trigger">
+                <i class="fas fa-gamepad hobby-icon"></i>
+                <h3>Gaming</h3>
+                <p>Passionate about immersive worlds and competitive gameplay.</p>
+            </div>
+            
+            <div class="hobby-box scroll-trigger" style="transition-delay: 200ms;">
+                <i class="fas fa-book-open hobby-icon"></i>
+                <h3>Manga</h3>
+                <p>Avid reader of Japanese storytelling and art.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Future Projects</h2>
+        <div class="project-placeholder scroll-trigger">
+            <h3>Coming Soon</h3>
+            <p>Showcase of engineering and creative works.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Atik Mahmud. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Typewriter Effect ---
+        const textElement = document.getElementById('typewriter');
+        const phrases
