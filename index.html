@@ -1,78 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Atik Mahmud | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atik Mahmud | Portfolio</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.hero p {
+  margin-top: 12px;
+  color: #cbd5f5;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #38bdf8;
+  color: #020617;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* SECTION */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.card span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* CONTACT */
+.contact {
+  background: #020617;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Hi, I'm <span>Atik Mahmud</span></h1>
-    <p>Engineering Student • Tech Enthusiast</p>
-    <a href="#education" class="btn">My Education</a>
-  </section>
+<section class="hero">
+  <h1>Hi, I'm <span>Atik Mahmud</span></h1>
+  <p>Engineering Student • Tech Enthusiast</p>
+  <a href="#education" class="btn">My Education</a>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a student passionate about engineering, technology, and learning new skills.
-      I enjoy building things, solving problems, and improving myself continuously.
-    </p>
-  </section>
+<section class="section" id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a student passionate about engineering, technology, and learning new skills.
+    I enjoy building things, solving problems, and improving myself continuously.
+  </p>
+</section>
 
-  <!-- EDUCATION -->
-  <section class="section" id="education">
-    <h2>Education</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Bangladesh University of Engineering and Technology</h3>
-        <p>Undergraduate Student</p>
-        <span>Dhaka, Bangladesh</span>
-      </div>
-
-      <div class="card">
-        <h3>Notre Dame College</h3>
-        <p>Higher Secondary Certificate (HSC)</p>
-        <span>Dhaka, Bangladesh</span>
-      </div>
+<section class="section" id="education">
+  <h2>Education</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Bangladesh University of Engineering and Technology</h3>
+      <p>Undergraduate Student</p>
+      <span>Dhaka, Bangladesh</span>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-      <div class="card">HTML</div>
-      <div class="card">CSS</div>
-      <div class="card">JavaScript</div>
-      <div class="card">MATLAB</div>
-      <div class="card">C / C++</div>
-      <div class="card">Problem Solving</div>
+    <div class="card">
+      <h3>Notre Dame College</h3>
+      <p>Higher Secondary Certificate (HSC)</p>
+      <span>Dhaka, Bangladesh</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">Project 1 – Coming Soon</div>
-      <div class="card">Project 2 – Coming Soon</div>
-      <div class="card">Project 3 – Coming Soon</div>
-    </div>
-  </section>
+<section class="section" id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">MATLAB</div>
+    <div class="card">C / C++</div>
+    <div class="card">Problem Solving</div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="section contact">
-    <h2>Contact</h2>
-    <p>Email: atik@example.com</p>
-  </section>
+<section class="section" id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">Project 1 – Coming Soon</div>
+    <div class="card">Project 2 – Coming Soon</div>
+    <div class="card">Project 3 – Coming Soon</div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section class="section contact">
+  <h2>Contact</h2>
+  <p>Email: atik@example.com</p>
+</section>
+
 </body>
 </html>
